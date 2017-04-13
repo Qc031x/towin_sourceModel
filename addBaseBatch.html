@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="x-ua-compatible" content="IE=edge">
+		<title>首页</title>
+		<!--样式文件引用-->
+		<link href="css/style.css" rel="stylesheet" type="text/css"/>
+		<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+		<link href="css/jquery.searchableSelect.css" rel="stylesheet" type="text/css"/>
+		<!--公共导航部分--->
+
+	<!--
+    	作者：qiancheng
+    	时间：2016-12-30
+    	描述：select
+    -->
+
+	<style>
+		.calendarImg{background: url('images/calendar.png') no-repeat 270px; cursor: pointer;}
+	</style>
+
+
+	</head>
+
+	<body style="background: #f0f0f0;">
+		<div class="top">
+			<div class="left"><img src="images/logo.png" alt="logo" />天问管理平台<span class="wel">欢迎<span>草根</span>登录天问团检智能管理平台！</span>
+			</div>
+			<div class="right"><img alt="退出登录" src="images/loginOut.png" /><span class="username">退出登录</span></div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12">
+				<img alt="123" src="images/tuoyuan.png" style="margin: 8% 0 3% 44%;">
+			</div>
+		</div>
+
+
+		<div class="row">
+			<div class="col-md-4"></div>
+			<div class="col-md-4" style="padding: 0 4%;">
+				<form class="form-horizontal" role="form" id="addBatch" action="roleList2.html">
+					<div class="form-group">
+						<label class="col-sm-2 control-label">批次编号</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" name="batch.batchNumber" placeholder="批次编号" datatype="*" nullmsg="请填写批次编号" style="width: 75%;">
+							<span class="Validform_checktip"></span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">批次名称</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" name="batch.name" placeholder="批次名称" datatype="*" nullmsg="请填写批次名称" style="width: 75%;">
+							<span class="Validform_checktip"></span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">开始时间</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control calendarImg" id="startime" name="batch.startTime" placeholder="开始时间" readonly datatype="*" nullmsg="请选择开始时间" style="width: 75%;" />
+							<span class="Validform_checktip"></span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">结束时间</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control calendarImg" id="endtime" name="batch.endTime" placeholder="结束时间" readonly datatype="*" nullmsg="请选择结束时间" style="width: 75%;" />
+							<span class="Validform_checktip"></span>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-offset-2 col-sm-10">
+							<button type="submit" class="btn btn-primary btn-block" style="width: 75%;">保存</button>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="col-md-4"></div>
+		</div>
+
+	</body>
+	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/jquery.searchableSelect.js"></script>
+	<script type="text/javascript" src="js/laydate/laydate.js"></script>
+	<script>
+		/*加载日历*/
+        var start = {
+            elem: '#startime',
+            format: 'YYYY-MM-DD',
+            max: '2099-06-16',
+            istime: false,
+            istoday: true,
+            choose: function(datas) {
+                var oldTime = (new Date(datas + " 00:00:00"));
+                oldTime.setDate(oldTime.getDate());
+                var ddd = oldTime.getFullYear() + "-" + (Number(oldTime.getMonth()) + Number(1)) + "-" + oldTime.getDate();
+                end.min = ddd; //开始日选好后，重置结束日的最小日期
+                end.start = ddd; //将结束日的初始值设定为开始日
+            }
+        };
+        var end = {
+            elem: '#endtime',
+            format: 'YYYY-MM-DD',
+            max: '2099-06-16',
+            istime: false,
+            istoday: true,
+            choose: function(datas) {
+                var oldTime = (new Date(datas + " 00:00:00"));
+                oldTime.setDate(oldTime.getDate());
+                var ddd = oldTime.getFullYear() + "-" + (Number(oldTime.getMonth()) + Number(1)) + "-" + oldTime.getDate();
+                start.max = ddd; //结束日选好后，重置开始日的最大日期
+            }
+        };
+        laydate(start);
+        laydate(end);
+	</script>
+
+</html>

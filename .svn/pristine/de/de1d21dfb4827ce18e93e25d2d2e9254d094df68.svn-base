@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>新增员工</title>
+		<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+		<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+		<link href="css/style.css" rel="stylesheet" type="text/css" />
+		<link href="css/addNewBatch.css" rel="stylesheet" type="text/css" />
+		<link href="js/laydate/need/laydate.css" rel="stylesheet" type="text/css" />
+		<link id="LayDateSkin" href="js/laydate/skins/default/laydate.css" rel="stylesheet" type="text/css" />
+		<style>
+			#laydate_box * {
+				box-sizing: content-box;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="top">
+			<div class="left"><img src="images/logo.png" alt="logo" />天问企业预约平台-企业端<span class="wel">欢迎<span>XXX</span>登录深圳市北大医院病历复印智能管理平台！</span>
+			</div>
+			<div class="right"><img alt="退出登录" src="images/loginOut.png" /><span class="username">退出登录</span></div>
+		</div>
+
+		<div class="page-container">
+			<div class="page-sidebar nav-collapse">
+				<ul class="page-sidebar-menu">
+					<li>
+						<a class="sideblk blk" href="index.html">
+							<i class="home"><img src="images/icon-home.png"/></i>
+							<span class="title">首页</span>
+							<span class="selected"></span>
+						</a>
+					</li>
+
+					<li>
+						<a class="sideblk blk" href="javascript:;">
+							<i class="caiwu"><img src="images/caiwu.png"/></i>
+							<span class="title">员工管理</span>
+							<span class="arrowicon"><img src="images/arrowdown.png"/></span>
+						</a>
+						<ul class="sub-menu">
+							<li>
+								<a href="employeeList.html">员工列表</a>
+							</li>
+							<li>
+								<a href="roleList.html">角色列表</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a class="sideblk blk" href="javascript:;">
+							<i class="caiwu"><img src="images/caiwu.png"/></i>
+							<span class="title">预约批次管理</span>
+							<span class="arrowicon"><img src="images/arrowdown.png"/></span>
+						</a>
+						<ul class="sub-menu">
+							<li>
+								<a href="batchList.html">批次列表</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+
+			<div class="page-content">
+				<div class="hds">新增员工</div>
+				<br/>
+				<div class="portlet-body">
+					<table class="table table-bordered table-hover m10" style="width:70%;">
+						<tr>
+							<td width="10%" class="tableleft">姓&emsp;&emsp;名</td>
+							<td>
+								<input type="text" class="form-control" style="width: 252px;"/>
+							</td>
+						</tr>
+						<tr>
+							<td class="tableleft">性&emsp;&emsp;别</td>
+							<td>
+								<select class="form-control" style="width: 63px;">
+									<option>男</option>
+									<option>女</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td class="tableleft">身份证号</td>
+							<td>
+								<input type="text" class="form-control" style="width: 252px;"/>
+							</td>
+						</tr>
+						<tr>
+							<td class="tableleft">工&emsp;&emsp;号</td>
+							<td>
+								<input type="text" class="form-control" style="width: 252px;"/>
+							</td>
+						</tr>
+						<tr>
+							<td class="tableleft">出生日期</td>
+							<td>
+								<input id="birthday" value="2016-12-22" readonly="readonly" type="text" class="timeBox">
+							</td>
+						</tr>
+						<tr>
+							<td class="tableleft">籍&emsp;&emsp;贯</td>
+							<td>
+								<select class="form-control" style="width: 126px;">
+									<option>湖北省</option>
+									<option>湖南省</option>
+									<option>广东省</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td class="tableleft">电&emsp;&emsp;话</td>
+							<td>
+								<input type="text" class="form-control" style="width: 252px;"/>
+							</td>
+						</tr>
+						<tr>
+							<td class="tableleft">家属电话</td>
+							<td>
+								<input type="text" class="form-control" style="width: 252px;"/>
+							</td>
+						</tr>
+						<tr>
+							<td class="tableleft">家庭住址</td>
+							<td>
+								<input type="text" class="form-control" style="width: 252px;"/>
+							</td>
+						</tr>
+						<tr>
+							<td class="tableleft">婚姻情况</td>
+							<td>
+								<select class="form-control" style="width: 126px;">
+									<option value="0">未婚</option>
+									<option value="1">已婚</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td class="tableleft">状&emsp;&emsp;态</td>
+							<td>
+								<select class="form-control" style="width: 126px;">
+									<option value="0">暂停</option>
+									<option value="1">启用</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td class="tableleft">归属角色</td>
+							<td>
+								<select class="form-control" style="width: 126px;">
+									<option value="0">普通员工</option>
+									<option value="1">中层人员</option>
+									<option value="1">管理人员</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td class="tableleft">入职时间</td>
+							<td>
+								<input id="entrytime" value="2016-12-22" readonly="readonly" type="text" class="timeBox">
+							</td>
+						</tr>
+						<tr>
+							<td class="tableleft">转正时间</td>
+							<td>
+								<input id="entrytime" value="2016-12-22" readonly="readonly" type="text" class="timeBox">
+							</td>
+						</tr>
+						<tr>
+							<td class="tableleft"></td>
+							<td>
+								<button class="btn btn-primary" style="width:auto;">保存</button>&nbsp;&nbsp;&nbsp;
+								<button class="btn" style="width:auto;" onclick="location.href='employeeList.html'">返回列表</button>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+
+			<div class="ykfooter">
+				<a href="#">帮助中心</a><span class="vertical">|</span>
+				<a href="#">关于我们</a><span class="vertical">|</span>
+				<a href="#">联系方式</a><span class="vertical">|</span><span class="ykcompely">天问信息技术（深圳）有限公司</span><span>&copy;&nbsp;2016&nbsp;浙&nbsp;B2-20080224-16</span></div>
+
+		</div>
+		<script src="js/jquery-1.11.1.min.js" type="text/javascript"></script>
+		<script src="js/pagination.js"></script>
+		<script src="js/bootstrap.min.js" type="text/javascript"></script>
+		<script src="js/leftsideAndPage.js"></script>
+		<script src="js/laydate/laydate.js"></script>
+
+		<script>
+			$(document).ready(function() {
+				$(".list span").click(function() {
+					if($(this).html() == "修改") {
+						$(this).siblings("p").children("input").attr("disabled", false);
+						$(this).html("保存");
+					} else if($(this).html() == "保存") {
+						$(this).siblings("p").children("input").attr("disabled", true);
+						$(this).html("修改");
+					}
+
+				})
+			});
+
+			/*加载日历*/
+			var start = {
+				elem: '#startime',
+				format: 'YYYY-MM-DD',
+				max: '2099-06-16',
+				istime: false,
+				istoday: true,
+				choose: function(datas) {
+					var oldTime = (new Date(datas + " 00:00:00"));
+					oldTime.setDate(oldTime.getDate());
+					var ddd = oldTime.getFullYear() + "-" + (Number(oldTime.getMonth()) + Number(1)) + "-" + oldTime.getDate();
+					end.min = ddd; //开始日选好后，重置结束日的最小日期
+					end.start = ddd; //将结束日的初始值设定为开始日
+				}
+			};
+			var end = {
+				elem: '#endtime',
+				format: 'YYYY-MM-DD',
+				max: '2099-06-16',
+				istime: false,
+				istoday: true,
+				choose: function(datas) {
+					var oldTime = (new Date(datas + " 00:00:00"));
+					oldTime.setDate(oldTime.getDate());
+					var ddd = oldTime.getFullYear() + "-" + (Number(oldTime.getMonth()) + Number(1)) + "-" + oldTime.getDate();
+					start.max = ddd; //结束日选好后，重置开始日的最大日期
+				}
+			};
+			laydate(start);
+			laydate(end);
+			
+			var birthday = {
+				elem: '#birthday',
+				format: 'YYYY-MM-DD',
+				max: '2099-06-16',
+				istime: false,
+				istoday: true,
+				choose: function(datas) {
+					var oldTime = (new Date(datas + " 00:00:00"));
+					oldTime.setDate(oldTime.getDate());
+					var ddd = oldTime.getFullYear() + "-" + (Number(oldTime.getMonth()) + Number(1)) + "-" + oldTime.getDate();
+					start.max = ddd; //结束日选好后，重置开始日的最大日期
+				}
+			};
+
+			var entrytime = {
+				elem: '#entrytime',
+				format: 'YYYY-MM-DD',
+				max: '2099-06-16',
+				istime: false,
+				istoday: true,
+				choose: function(datas) {
+					var oldTime = (new Date(datas + " 00:00:00"));
+					oldTime.setDate(oldTime.getDate());
+					var ddd = oldTime.getFullYear() + "-" + (Number(oldTime.getMonth()) + Number(1)) + "-" + oldTime.getDate();
+					start.max = ddd; //结束日选好后，重置开始日的最大日期
+				}
+			};
+
+			laydate(birthday);
+			laydate(entrytime);
+		</script>
+	</body>
+
+</html>

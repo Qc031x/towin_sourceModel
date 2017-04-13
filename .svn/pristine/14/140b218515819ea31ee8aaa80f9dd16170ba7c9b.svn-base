@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <title>角色管理</title>
+    <!--样式文件引用-->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="css/swiper.css"/>
+    <link href="css/style.css" rel="stylesheet" type="text/css"/>
+    <link href="css/applicationWaitUpload.css" rel="stylesheet" type="text/css"><!---my css--->
+    <link href="css/zTreeStyle.css" rel="stylesheet" type="text/css">
+    <link href="css/reservationWaitCheck.css" rel="stylesheet" type="text/css">
+
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+      div#rMenu {position:absolute; visibility:hidden; top:0; background-color: #555;text-align: left;padding: 2px;}
+      div#rMenu ul li{
+      margin: 1px 0;
+      padding: 0 5px;
+      cursor: pointer;
+      list-style: none outside none;
+      background-color: #DFDFDF;
+      }
+
+    .search-body {
+        height: 50px;
+        line-height: 50px;
+        padding: 0 0 0 24px;
+        font-size: 12px;
+        color: #333;
+    }
+
+    .search-body .timeBox, .search-body .search-box {
+        float: left;
+        margin: 0 40px 0 0;
+    }
+
+    .tankuang{
+        background-color:#fff;
+        float:left;
+        border-radius:10px;
+    }
+    .tankuang input[type=text]{height: 20px; width: 70px;line-height: 10px;margin: 3px;border-radius: 3px;border: solid 1px #e1e1e1;outline: none;}
+    .tankuang_left{
+        width:18%;
+        height:506px;
+        float:left;
+        margin:18px 0 0 5%;
+    }
+    .tankuang_left .leftul{
+        width:100%;
+        height:20px;
+        float:left;
+        margin: 0;
+        cursor: pointer;
+    }
+    .tankuang_left .title{
+        width:35%;
+        height:20px;
+        float:left;
+        background-color:#e1e1e1;
+        border-radius:5px 5px 0 0;
+        font-size:12px;
+        color:#000;
+        text-align:center;
+    }
+    .tankuang_left .title.active,.tankuang_left .title:hover{
+        width:35%;
+        height:20px;
+        float:left;
+        background-color:#9a9a9a;
+        border-radius:5px 5px 0 0;
+        font-size:12px;
+        color:#000;
+        text-align:center;
+    }
+    .tankuang_left_bumen{
+        width:100%;
+        height:468px;
+        border-radius:0 10px 10px 10px;
+        margin-top:20px;
+        border:2px solid #e1e1e1;
+    }
+    .tankuang_mid{
+        height:494px;
+        margin:15px 15px 0 5%;
+        float:left;
+        background-image:url(images/BJK_03.jpg);
+
+    }
+    .mid_jiantou{
+        width:4%;
+        height:510px;
+        float:left;
+    }
+    .jiantou_top{
+        width:25px;
+        height:45px;
+        float:left;
+        padding-top:188px;
+        padding-left:10%;
+    }
+    .jiantou_bottom{
+        width:25px;
+        height:45px;
+        float:left;
+        padding-top:70px;
+        padding-left:10%;
+    }
+    .tankuang_rigth{
+        height:494px;
+        margin-top:15px;
+        margin-left:0.2%;
+        float:left;
+        background-image:url(images/BJK_03.jpg);
+    }
+    .tankuang_bottom{height: 40px; margin-top: 5px; padding-left: 25%;}
+    .tankuang_bottom p{float: left; margin-right: 15px;}
+
+
+    .midTitle{font-size: 26px; color: #0c0c0c;margin: 10px 18px;}
+    .midSearch{font-size: 10px; width: auto;margin: 20px 0;padding: 0 20px;}
+    .midSearch em{width: auto; float: right; margin: 0 15px 10px 0;}
+
+    .midName{width: 100%; height: 34px; border: solid 1px #6d6d6d; border-style: solid none;}
+    </style>
+	<!--
+    	作者：qiancheng1995@foxmail.com
+    	时间：2017-01-04
+    	描述：progress
+    -->
+	<style type="text/css">
+		 html, body {
+        position: relative;
+        height: 100%;
+    }
+		.progress{
+			width: 800px;
+			height: 100px;
+			background: #fff;
+			margin-top: 40px;
+			box-shadow: none;
+		}
+		.progress img{
+			background: #fff;
+			margin-left: 90px;
+		}
+		.swiper-container {
+        width: 50%;
+        height: 200px;
+    }
+    .swiper-slide {
+        text-align: center;
+        font-size: 28px;
+        background: #fff;
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+	</style>
+</head>
+<body>
+<div class="top">
+    <div class="left"><img src="images/logo.png" alt="logo" />天问企业预约平台-企业端<span class="wel">欢迎<span>XXX</span>登录深圳市北大医院病历复印智能管理平台！</span></div>
+    <div class="right"><img alt="退出登录" src="images/loginOut.png" /><span class="username">退出登录</span></div>
+</div>
+
+<div class="page-container">
+    <div class="page-sidebar nav-collapse collapse">
+        <div class="row" style="padding-left: 10px;">
+            <div class="col-md-8">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+                        第四季度职第一批职工体检
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">第三季度职第一批职工体检</a></li>
+                        <li><a href="#">第三季度职第二批职工体检</a></li>
+                        <li><a href="#">第四季度职第二批职工体检</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <button class="btn btn-primary btn-sm">确定</button>
+            </div>
+        </div>
+        <ul class="page-sidebar-menu">
+            <li>
+                <a class="sideblk blk" href="index.html">
+                    <i class="home"><img src="images/icon-home.png"/></i>
+                    <span class="title">首页</span>
+                    <span class="selected"></span>
+                </a>
+            </li>
+
+            <li>
+                <a class="sideblk" href="javascript:;">
+                    <i class="caiwu"><img src="images/caiwu.png"/></i>
+                    <span class="title">团检批次管理</span>
+                    <span class="arrowicon"><img src="images/arrowdown.png"/></span>
+                </a>
+                <ul class="sub-menu subactive">
+                    <li >
+                        <a href="batchList.html">批次列表</a>
+                    </li>
+                    <li>
+                        <a href="addNewBatch.html">新增批次</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a class="sideblk" href="javascript:;">
+                    <i class="caiwu"><img src="images/caiwu.png"/></i>
+                    <span class="title">员工管理</span>
+                    <span class="arrowicon"><img src="images/arrowdown.png"/></span>
+                </a>
+                <ul class="sub-menu subactive">
+                    <li >
+                        <a href="employeeList.html">员工列表</a>
+                    </li>
+                    <li class="titactive">
+                        <a href="roleList.html">角色列表</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+	
+	
+	<div class="progress">
+		<img src="images/1.png"/>
+	</div>
+	
+	<div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">Slide 1</div>
+            <div class="swiper-slide">Slide 2</div>
+            <div class="swiper-slide">Slide 3</div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+	
+	
+	
+
+    <div class="ykfooter"><a href="#">帮助中心</a><span class="vertical">|</span><a href="#">关于我们</a><span class="vertical">|</span><a href="#">联系方式</a><span class="vertical">|</span><span class="ykcompely">天问信息技术（深圳）有限公司</span><span>&copy;&nbsp;2016&nbsp;浙&nbsp;B2-20080224-16</span></div>
+
+	
+
+
+
+</div>
+
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script src="js/swiper.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/pagination.js"></script>
+<script type="text/javascript" src="js/jquery.ztree.all.min.js"></script>
+<script src="js/bootstrap.min.js" type="text/javascript"></script>
+<script src="js/leftsideAndPage.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+	var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+        direction: 'vertical',
+        mousewheelControl : true
+    });
+</script>
+<script>
+var zTree;
+    var setting={
+        //树形图动作
+        view: {
+            selectedMulti: false, //设置是否允许同时选中多个节点。
+            showIcon : false
+        },
+        edit : {
+          enable : true,
+          removeTitle : "删除",
+          renameTitle : "重命名",
+          showRemoveBtn : setBtn,
+          showRenameBtn : setBtn
+        },
+        callback : {
+            onClick : setFrame,
+            beforeRemove: beforeRemove,
+            onRightClick: OnRightClick
+        }
+    };
+    var zNodes = [
+        {name : "华润深圳", open : true, children : [
+            {name : "高层管理",noR:true},
+            {name : "中层管理",noR:true},
+            {name : "普通员工",noR:true}
+        ]}
+    ];
+
+    var setting2={};
+    var zNodes2 = [
+        {name : "华润深圳", open : true, children : [
+            {name : "总经办", open : true},
+            {name : "技术部", children : [
+                {name : "项目组1"},
+                {name : "项目组2"},
+                {name : "项目组3"},
+                {name : "项目组4"}
+            ]},
+            {name : "财务部"},
+            {name : "售后部", children : [
+                {name : "售后一部"},
+                {name : "售后二部"},
+                {name : "售后三部"}
+            ]},
+            {name : "后勤部", children : [
+                {name : "后勤一部"},
+                {name : "后勤二部"},
+                {name : "后勤三部"}
+            ]},
+            {name : "法务部"}
+        ]}
+    ];
+//  $(document).ready(function () {
+//      $(".tcdPageCode").css('display', 'block');
+//      $.fn.zTree.init($("#treeDemo"), setting, zNodes);
+//      $.fn.zTree.init($("#depart"), setting2, zNodes2);
+//      zTree = $.fn.zTree.getZTreeObj("treeDemo");
+//      zTree.expandAll(true);
+//  });
+
+    function setFrame(event, treeId, treeNode) {
+        if(!treeNode.isParent){
+            $("#liebiao1").show();
+            if(Number(treeNode.getIndex()) % 2 == 0){
+                $("#liebiao1 tr:gt(5)").hide();
+            }else{
+                $("#liebiao1 tr").show();
+            }
+        }
+    };
+
+    var log, className = "dark";
+    function beforeRemove(treeId, treeNode) {
+			className = (className === "dark" ? "":"dark");
+			showLog("[ "+getTime()+" beforeRemove ]&nbsp;&nbsp;&nbsp;&nbsp; " + treeNode.name);
+			var zTree = $.fn.zTree.getZTreeObj("treeDemo");
+			zTree.selectNode(treeNode);
+			return confirm("确认删除节点-" + treeNode.name + "-吗？");
+		}
+
+    function showLog(str) {
+			if (!log) log = $("#log");
+			log.append("<li class='"+className+"'>"+str+"</li>");
+			if(log.children("li").length > 8) {
+				log.get(0).removeChild(log.children("li")[0]);
+			}
+		}
+
+    function getTime() {
+			var now= new Date(),
+			h=now.getHours(),
+			m=now.getMinutes(),
+			s=now.getSeconds(),
+			ms=now.getMilliseconds();
+			return (h+":"+m+":"+s+ " " +ms);
+		}
+
+    function setBtn(treeId, treeNode) {
+    	return !treeNode.isParent;
+    }
+
+    function OnRightClick(event, treeId, treeNode) {
+			if (!treeNode && event.target.tagName.toLowerCase() != "button" && $(event.target).parents("a").length == 0) {
+				zTree.cancelSelectedNode();
+				showRMenu("root", event.clientX, event.clientY);
+			} else if (treeNode && !treeNode.noR) {
+				zTree.selectNode(treeNode);
+				showRMenu("node", event.clientX, event.clientY);
+			}
+		}
+
+		function showRMenu(type, x, y) {
+			$("#rMenu ul").show();
+			if (type=="root") {
+				$("#m_del").hide();
+				$("#m_check").hide();
+				$("#m_unCheck").hide();
+			} else {
+				$("#m_del").show();
+				$("#m_check").show();
+				$("#m_unCheck").show();
+			}
+			$("#rMenu").css({"top":y+"px", "left":x+"px", "visibility":"visible"});
+
+			$("body").bind("mousedown", onBodyMouseDown);
+		}
+
+    function hideRMenu() {
+			if ($("#rMenu")) $("#rMenu").css({"visibility": "hidden"});
+			$("body").unbind("mousedown", onBodyMouseDown);
+		}
+
+    function onBodyMouseDown(event){
+			if (!(event.target.id == "rMenu" || $(event.target).parents("#rMenu").length>0)) {
+				$("#rMenu").css({"visibility" : "hidden"});
+			}
+		}
+
+    var addCount = 1;
+		function addTreeNode() {
+			hideRMenu();
+			var newNode = { name:"角色名" + (addCount++),noR:true};
+			if (zTree.getSelectedNodes()[0]) {
+				newNode.checked = zTree.getSelectedNodes()[0].checked;
+				zTree.addNodes(zTree.getSelectedNodes()[0], newNode);
+			} else {
+				zTree.addNodes(null, newNode);
+			}
+		}
+
+    function resetTree() {
+			hideRMenu();
+			$.fn.zTree.init($("#treeDemo"), setting, zNodes);
+		}
+
+</script>
+</body>
+
+</html>

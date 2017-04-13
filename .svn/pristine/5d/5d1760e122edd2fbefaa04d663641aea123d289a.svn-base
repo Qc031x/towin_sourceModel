@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>预约模板设置</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="css/style.css" rel="stylesheet" type="text/css"/>
+    <link href="css/addNewBatch.css" rel="stylesheet" type="text/css"/>
+    <link href="js/laydate/need/laydate.css" rel="stylesheet" type="text/css" />
+    <link href="css/zTreeStyle.css" rel="stylesheet" type="text/css">
+    <link href="css/fileinput.min.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="top">
+    <div class="left"><img src="images/logo.png" alt="logo" />天问企业预约平台-企业端<span class="wel">欢迎<span>XXX</span>登录深圳市北大医院病历复印智能管理平台！</span></div>
+    <div class="right"><img alt="退出登录" src="images/loginOut.png"/><span class="username">退出登录</span></div>
+</div>
+
+<div class="page-container">
+    <div class="page-sidebar nav-collapse collapse">
+        <div class="row" style="padding-left: 10px;">
+            <div class="col-md-8">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+                        第四季度职第一批职工体检
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">第三季度职第一批职工体检</a></li>
+                        <li><a href="#">第三季度职第二批职工体检</a></li>
+                        <li><a href="#">第四季度职第二批职工体检</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <button class="btn btn-primary btn-sm">确定</button>
+            </div>
+        </div>
+        <ul class="page-sidebar-menu">
+            <li>
+                <a class="sideblk blk" href="index.html">
+                    <i class="home"><img src="images/icon-home.png"/></i>
+                    <span class="title">首页</span>
+                    <span class="selected"></span>
+                </a>
+            </li>
+
+            <li>
+                <a class="sideblk" href="javascript:;">
+                    <i class="caiwu"><img src="images/caiwu.png"/></i>
+                    <span class="title">员工管理</span>
+                    <span class="arrowicon"><img src="images/arrowdown.png"/></span>
+                </a>
+                <ul class="sub-menu subactive">
+                    <li >
+                        <a href="employeeList.html">员工列表</a>
+                    </li>
+                    <li>
+                        <a href="roleList.html">角色列表</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a class="sideblk" href="javascript:;">
+                    <i class="caiwu"><img src="images/caiwu.png"/></i>
+                    <span class="title">团检批次管理</span>
+                    <span class="arrowicon"><img src="images/arrowdown.png"/></span>
+                </a>
+                <ul class="sub-menu subactive">
+                    <li class="titactive">
+                        <a href="batchList.html">批次列表</a>
+                    </li>
+                    <li>
+                        <a href="addNewBatch.html">新增批次</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="page-content">
+        <div class="hds">新增预约批次</div>
+        <br/>
+        <div class="portlet-body">
+            <table class="table table-bordered table-hover m10" style="width:70%;">
+            <tr>
+                <td width="10%" class="tableleft">批次号</td>
+                <td><input type="text" name="name" /></td>
+            </tr>
+            <tr>
+                <td class="tableleft">批次名称</td>
+                <td><input type="text" name="name" /></td>
+            </tr>
+            <tr>
+                <td class="tableleft">开始时间</td>
+                <td><input class="timeBox" id="startime" readonly value="2016-12-21" type="text" style="cursor: pointer; background-color: #fff;"></td>
+            </tr>
+            <tr>
+                <td class="tableleft">结束时间</td>
+                <td><input class="timeBox" id="endtime" readonly value="2016-12-21" type="text" style="cursor: pointer; background-color: #fff;"></td>
+            </tr>
+            <tr>
+                <td class="tableleft">选择城市</td>
+                <td>
+                    <div class="dropdown">
+                        <span>
+                            <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" style="width:105px;">
+                                请选择
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu pull-left" role="menu">
+                                <li role="presentation">
+                                    <a role="menuitem" tabindex="-1" href="#">北京</a>
+                                </li>
+                                <li role="presentation">
+                                    <a role="menuitem" tabindex="-1" href="#">上海</a>
+                                </li>
+                                <li role="presentation">
+                                    <a role="menuitem" tabindex="-1" href="#">广东</a>
+                                </li>
+                            </ul>
+                        </span>
+                        <span>
+                            <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" style="width:105px;">
+                                请选择
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu pull-left" role="menu">
+                                <li role="presentation">
+                                    <a role="menuitem" tabindex="-1" href="#">深圳</a>
+                                </li>
+                                <li role="presentation">
+                                    <a role="menuitem" tabindex="-1" href="#">广州</a>
+                                </li>
+                                <li role="presentation">
+                                    <a role="menuitem" tabindex="-1" href="#">东莞</a>
+                                </li>
+                                <li role="presentation">
+                                    <a role="menuitem" tabindex="-1" href="#">惠州</a>
+                                </li>
+                                <li role="presentation">
+                                    <a role="menuitem" tabindex="-1" href="#">中山</a>
+                                </li>
+                            </ul>
+                        </span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="tableleft">选定人员</td>
+                <td>
+                    <div class="dropdown">
+                        <span>
+                            <button type="button" class="btn btn-default btn-sm chs-button" data-toggle="modal" data-target="#chooseEmp" style="width:105px;">
+                                请选择
+                            </button>
+                        </span>
+                        <span>
+                            <button type="button" class="btn btn-default btn-sm" style="width:105px;">
+                                查看
+                            </button>
+                        </span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="tableleft">选择分院</td>
+                <td>
+                    <div class="dropdown">
+                    <span>
+                        <button type="button" class="btn btn-default btn-sm chs-button" data-toggle="modal" data-target="#chooseBranch" style="width:105px;">
+                            请选择
+                        </button>
+                    </span>
+                        <span>
+                        <button type="button" class="btn btn-default btn-sm" style="width:105px;">
+                            查看
+                        </button>
+                    </span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="tableleft">绑定套餐</td>
+                <td>
+                    <div class="dropdown">
+                <span>
+                    <button type="button" class="btn btn-default btn-sm chs-button" data-toggle="modal" data-target="#choosePro" style="width:105px;">
+                        请选择
+                    </button>
+                </span>
+                        <span>
+                    <button type="button" class="btn btn-default btn-sm" style="width:105px;">
+                        查看
+                    </button>
+                </span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="tableleft"></td>
+                <td>
+                    <a class="btn btn-warning" style="width:auto;" href="batchList.html">保存并启动</a>&nbsp;&nbsp;&nbsp;
+                    <a class="btn btn-primary" style="width:auto;" href="batchList.html">保存</a>&nbsp;&nbsp;&nbsp;
+                    <a class="btn btn-default" style="width:auto;" href="batchList.html">取消</a>
+                </td>
+            </tr>
+        </table>
+        </div>
+    </div>
+
+    <div class="ykfooter"><a href="#">帮助中心</a><span class="vertical">|</span><a href="#">关于我们</a><span class="vertical">|</span><a href="#">联系方式</a><span class="vertical">|</span><span class="ykcompely">天问信息技术（深圳）有限公司</span><span>&copy;&nbsp;2016&nbsp;浙&nbsp;B2-20080224-16</span></div>
+
+</div>
+
+<!-- 选择套餐弹框 -->
+<div class="modal fade" id="choosePro" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" style="width: 1100px; height: 610px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">选择套餐</h4>
+            </div>
+            <div class="modal-body">
+                <div class="tankuang">
+                    <div style="width: 1048px; height: 510px;">
+                        <div class="tankuang_left">
+                            <ul class="leftul">
+                                <li class="title active" data-source="depart">按部门</li><li class="title" data-source="identify">按角色</li>
+                            </ul>
+                            <div class="tankuang_left_bumen">
+                                <div style="padding: 5px 0 5px 5px; border-bottom: solid 2px #e1e1e1;">
+                                    <input type="text" style="width: 110px;" />  <button class="btn btn-xs">查询</button>
+                                </div>
+                                <div class="ztree" id="depart"></div>
+                                <div class="ztree" id="identify" style="display: none;"></div>
+                            </div>
+                        </div>
+
+                        <div class="tankuang_mid">
+                            <p class="midTitle">分配套餐</p>
+                            <div class="midSearch">
+                                <div class="btn-group">
+                                    <b style="float: left; line-height: 15px; padding: 3px;">筛选</b>
+                                    <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                                        套餐名称
+                                        <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="#">套餐名称</a></li>
+                                        <li><a href="#">适用分院</a></li>
+                                        <li><a href="#">适用性别</a></li>
+                                    </ul>
+                                </div>
+                                <input type="text" style="width: 110px;" />
+                                <div class="btn-group" style="display: none;">
+                                    <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                                        分院
+                                        <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="#">Action</a></li>
+                                        <li><a href="#">Another action</a></li>
+                                        <li><a href="#">Something else here</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="#">Separated link</a></li>
+                                    </ul>
+                                </div>
+                                <div class="btn-group" style="display: none;">
+                                    <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                                        商家
+                                        <span class="caret"></span>
+                                    </button>
+                                </div>
+                                <button class="btn btn-primary btn-xs" style="float: right">查询</button>
+                            </div>
+                            <!--<div class="midName">-->
+                            <!--<ul>-->
+                            <!--<li>套餐名称</li>-->
+                            <!--<li>姓名</li>-->
+                            <!--<li>价格</li>-->
+                            <!--<li>适用性别</li>-->
+                            <!--</ul>-->
+                            <!--</div>-->
+                            <div>
+                                <table class="table table-striped" style="margin: 0;">
+                                    <thead>
+                                    <tr>
+                                        <th><input type="checkbox"></th>
+                                        <th>套餐名称</th>
+                                        <th>姓名</th>
+                                        <th>价格</th>
+                                        <th>适用性别</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>A套餐</td>
+                                        <td>张三</td>
+                                        <td>300.00</td>
+                                        <td>男</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>B套餐</td>
+                                        <td>张三</td>
+                                        <td>300.00</td>
+                                        <td>男/女</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>C套餐</td>
+                                        <td>张三</td>
+                                        <td>300.00</td>
+                                        <td>男/女</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>D套餐</td>
+                                        <td>张三</td>
+                                        <td>300.00</td>
+                                        <td>男</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>B套餐</td>
+                                        <td>张三</td>
+                                        <td>300.00</td>
+                                        <td>女</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>C套餐</td>
+                                        <td>张三</td>
+                                        <td>300.00</td>
+                                        <td>男</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>D套餐</td>
+                                        <td>张三</td>
+                                        <td>300.00</td>
+                                        <td>女</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>D套餐</td>
+                                        <td>张三</td>
+                                        <td>300.00</td>
+                                        <td>女</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                <div class="tcdPageCode paginList" style="position: static;">
+                                    <div class="pagination" style="margin: 0;"></div>
+                                </div>
+                                <div class="pageBlank"></div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="mid_jiantou">
+                            <div class="jiantou_top"><img src="images/jiantou1.png" /></div>
+                            <div class="jiantou_bottom"><img src="images/jiantou2.png"/></div>
+                        </div>
+                        <div class="tankuang_rigth">
+                            <p class="midTitle">已选套餐</p>
+                            <div class="midSearch">
+                                <div class="btn-group">
+                                    <b style="float: left; line-height: 15px; padding: 3px;">筛选</b>
+                                    <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                                        套餐名称
+                                        <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="#">套餐名称</a></li>
+                                        <li><a href="#">适用分院</a></li>
+                                        <li><a href="#">适用性别</a></li>
+                                    </ul>
+                                </div>
+                                <input type="text" style="width: 110px;" />
+                                <div class="btn-group" style="display: none;">
+                                    <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                                        分院
+                                        <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="#">Action</a></li>
+                                        <li><a href="#">Another action</a></li>
+                                        <li><a href="#">Something else here</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="#">Separated link</a></li>
+                                    </ul>
+                                </div>
+                                <div class="btn-group" style="display: none;">
+                                    <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                                        商家
+                                        <span class="caret"></span>
+                                    </button>
+                                </div>
+                                <button class="btn btn-primary btn-xs" style="float: right">查询</button>
+                            </div>
+                            <!--<div class="midName">-->
+                            <!--<ul>-->
+                            <!--<li>套餐名称</li>-->
+                            <!--<li>姓名</li>-->
+                            <!--<li>价格</li>-->
+                            <!--<li>适用性别</li>-->
+                            <!--</ul>-->
+                            <!--</div>-->
+                            <div class="ft10" style="height: 380px; overflow: scroll;">
+                                <table class="table table-striped">
+                                    <thead>
+                                    <tr>
+                                        <th><input type="checkbox"></th>
+                                        <th>套餐名称</th>
+                                        <th>姓名</th>
+                                        <th>价格</th>
+                                        <th>适用性别</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>A套餐</td>
+                                        <td>张三</td>
+                                        <td>300.00</td>
+                                        <td>男</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>B套餐</td>
+                                        <td>张三</td>
+                                        <td>300.00</td>
+                                        <td>男/女</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>C套餐</td>
+                                        <td>张三</td>
+                                        <td>300.00</td>
+                                        <td>男/女</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>D套餐</td>
+                                        <td>张三</td>
+                                        <td>300.00</td>
+                                        <td>男</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>B套餐</td>
+                                        <td>张三</td>
+                                        <td>300.00</td>
+                                        <td>女</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>C套餐</td>
+                                        <td>张三</td>
+                                        <td>300.00</td>
+                                        <td>男</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>D套餐</td>
+                                        <td>张三</td>
+                                        <td>300.00</td>
+                                        <td>女</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>B套餐</td>
+                                        <td>张三</td>
+                                        <td>300.00</td>
+                                        <td>女</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>C套餐</td>
+                                        <td>张三</td>
+                                        <td>300.00</td>
+                                        <td>男</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>D套餐</td>
+                                        <td>张三</td>
+                                        <td>300.00</td>
+                                        <td>女</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>B套餐</td>
+                                        <td>张三</td>
+                                        <td>300.00</td>
+                                        <td>女</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>C套餐</td>
+                                        <td>张三</td>
+                                        <td>300.00</td>
+                                        <td>男</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>D套餐</td>
+                                        <td>张三</td>
+                                        <td>300.00</td>
+                                        <td>女</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tankuang_bottom">
+                        <p>限额  <input type="text"></p>
+                        <p>限额  <input type="text"></p>
+                        <p>限额  <input type="text"></p>
+                        <p>限额  <input type="text"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary">确认</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="chooseBranch" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" style="width: 910px; height: 410px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title">选择分院</h4>
+            </div>
+            <div class="modal-body">
+                <div class="">
+                    <div class="row" style="padding: 15px;">
+                        <div class="col-md-5" style="width: 415px;">
+                            <div class="chs-branch">
+                                <div class="row">
+                                    <div class="chs-title">选择分院</div>
+                                </div>
+                                <div class="row" style="margin: 20px 0 20px 20px;">
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control input-sm">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <button class="btn btn-primary btn-sm">查询</button>
+                                    </div>
+                                </div>
+                                <div class="row" style="margin: 0;">
+                                    <table class="table table-striped">
+                                        <thead>
+                                        <tr>
+                                            <th><input type="checkbox"></th>
+                                            <th>分院名称</th>
+                                            <th>分院地址</th>
+                                            <th>自定义</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td><input type="checkbox"></td>
+                                            <td>慈铭体检南山分院</td>
+                                            <td>南山区南山大道1024号</td>
+                                            <td>是</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox"></td>
+                                            <td>慈铭体检南山分院</td>
+                                            <td>南山区南山大道1024号</td>
+                                            <td>是</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox"></td>
+                                            <td>慈铭体检南山分院</td>
+                                            <td>南山区南山大道1024号</td>
+                                            <td>是</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox"></td>
+                                            <td>慈铭体检南山分院</td>
+                                            <td>南山区南山大道1024号</td>
+                                            <td>是</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="tcdPageCode paginList">
+                                        <div class="pagination" style="margin: 0;"></div>
+                                    </div>
+                                    <div class="pageBlank"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-1" style="width: 40px;">
+                            <div class="row" style="margin: 210px 0 0 -7px;">
+                                <img src="images/jiantou1.png">
+                            </div>
+                            <div class="row" style="margin: 40px 0 0 -7px;">
+                                <img src="images/jiantou2.png">
+                            </div>
+                        </div>
+                        <div class="col-md-5" style="width: 415px;">
+                            <div class="chs-branch">
+                                <div class="row">
+                                    <div class="chs-title">已选分院</div>
+                                </div>
+                                <div class="row" style="margin: 20px 0 20px 20px;">
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control input-sm">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <button class="btn btn-primary btn-sm">查询</button>
+                                    </div>
+                                </div>
+                                <div class="row" style="height: 375px;overflow: scroll; overflow-x: hidden; overflow-y: auto; margin: 0;">
+                                    <table class="table table-striped">
+                                        <thead>
+                                        <tr>
+                                            <th><input type="checkbox"></th>
+                                            <th>分院名称</th>
+                                            <th>分院地址</th>
+                                            <th>自定义</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td><input type="checkbox"></td>
+                                            <td>慈铭体检南山分院</td>
+                                            <td>南山区南山大道1024号</td>
+                                            <td>是</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox"></td>
+                                            <td>慈铭体检南山分院</td>
+                                            <td>南山区南山大道1024号</td>
+                                            <td>是</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox"></td>
+                                            <td>慈铭体检南山分院</td>
+                                            <td>南山区南山大道1024号</td>
+                                            <td>是</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox"></td>
+                                            <td>慈铭体检南山分院</td>
+                                            <td>南山区南山大道1024号</td>
+                                            <td>是</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox"></td>
+                                            <td>慈铭体检南山分院</td>
+                                            <td>南山区南山大道1024号</td>
+                                            <td>是</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox"></td>
+                                            <td>慈铭体检南山分院</td>
+                                            <td>南山区南山大道1024号</td>
+                                            <td>是</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox"></td>
+                                            <td>慈铭体检南山分院</td>
+                                            <td>南山区南山大道1024号</td>
+                                            <td>是</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox"></td>
+                                            <td>慈铭体检南山分院</td>
+                                            <td>南山区南山大道1024号</td>
+                                            <td>是</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox"></td>
+                                            <td>慈铭体检南山分院</td>
+                                            <td>南山区南山大道1024号</td>
+                                            <td>是</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox"></td>
+                                            <td>慈铭体检南山分院</td>
+                                            <td>南山区南山大道1024号</td>
+                                            <td>是</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox"></td>
+                                            <td>慈铭体检南山分院</td>
+                                            <td>南山区南山大道1024号</td>
+                                            <td>是</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox"></td>
+                                            <td>慈铭体检南山分院</td>
+                                            <td>南山区南山大道1024号</td>
+                                            <td>是</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary">确认</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="chooseEmp" tabindex="-1" role="dialog" aria-labelledby="chooseEmpLable" aria-hidden="true">
+    <div class="modal-dialog" style="width: 1100px; height: 610px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="chooseEmpLable">选择人员</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row" style="padding: 15px;">
+                    <div class="col-md-3 emp" style="margin-top: 10px;">
+                        <ul class="leftul">
+                            <li class="title active" data-source="depart2">按部门</li><li class="title" data-source="identify2">按角色</li>
+                        </ul>
+                        <div class="tankuang_left_bumen" style="height: 480px;">
+                            <div style="padding: 5px 0 5px 5px; border-bottom: solid 2px #e1e1e1;">
+                                <input type="text" style="width: 110px;" />  <button class="btn btn-xs">查询</button>
+                            </div>
+                            <div class="ztree" id="depart2"></div>
+                            <div class="ztree" id="identify2" style="display: none;"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-4" style="width: 375px;">
+                        <div class="chs-branch">
+                            <div class="row">
+                                <div class="chs-title">导入人员</div>
+                            </div>
+                            <div class="row" style="margin: 20px 0 20px 20px;">
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control input-sm">
+                                </div>
+                                <div class="col-md-3">
+                                    <button class="btn btn-primary btn-sm">查询</button>
+                                </div>
+                            </div>
+                            <div class="row" style="margin: 0;">
+                                <div id="empTable">
+                                    <table class="table table-striped">
+                                        <thead>
+                                        <tr>
+                                            <th><input type="checkbox"></th>
+                                            <th>编号</th>
+                                            <th>姓名</th>
+                                            <th>手机号码</th>
+                                            <th>部门</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td><input type="checkbox"></td>
+                                            <td>10051</td>
+                                            <td>张三</td>
+                                            <td>13544659956</td>
+                                            <td>技术部</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox"></td>
+                                            <td>10051</td>
+                                            <td>张三</td>
+                                            <td>13544659956</td>
+                                            <td>技术部</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox"></td>
+                                            <td>10051</td>
+                                            <td>张三</td>
+                                            <td>13544659956</td>
+                                            <td>技术部</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox"></td>
+                                            <td>10051</td>
+                                            <td>张三</td>
+                                            <td>13544659956</td>
+                                            <td>技术部</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="tcdPageCode paginList">
+                                        <div class="pagination" style="margin: 0;"></div>
+                                    </div>
+                                    <div class="pageBlank"></div>
+                                </div>
+                                <form enctype="multipart/form-data" style="display: none;">
+                                    <input id="file-0b" class="file" type="file" data-show-preview="false">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1" style="width: 40px;">
+                        <div class="row" style="margin: 210px 0 0 -7px;">
+                            <img src="images/jiantou1.png">
+                        </div>
+                        <div class="row" style="margin: 40px 0 0 -7px;">
+                            <img src="images/jiantou2.png">
+                        </div>
+                    </div>
+                    <div class="col-md-4" style="width: 375px;">
+                        <div class="chs-branch">
+                            <div class="row">
+                                <div class="chs-title">已选人员</div>
+                            </div>
+                            <div class="row" style="margin: 20px 0 20px 20px;">
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control input-sm">
+                                </div>
+                                <div class="col-md-3">
+                                    <button class="btn btn-primary btn-sm">查询</button>
+                                </div>
+                            </div>
+                            <div class="row" style="margin: 0;">
+                                <table class="table table-striped">
+                                    <thead>
+                                    <tr>
+                                        <th><input type="checkbox"></th>
+                                        <th>编号</th>
+                                        <th>姓名</th>
+                                        <th>手机号码</th>
+                                        <th>部门</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>10051</td>
+                                        <td>张三</td>
+                                        <td>13544659956</td>
+                                        <td>技术部</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>10051</td>
+                                        <td>张三</td>
+                                        <td>13544659956</td>
+                                        <td>技术部</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>10051</td>
+                                        <td>张三</td>
+                                        <td>13544659956</td>
+                                        <td>技术部</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>10051</td>
+                                        <td>张三</td>
+                                        <td>13544659956</td>
+                                        <td>技术部</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                <div class="tcdPageCode paginList">
+                                    <div class="pagination" style="margin: 0;"></div>
+                                </div>
+                                <div class="pageBlank"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary">确认</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script src="js/pagination.js"></script>
+<script src="js/bootstrap.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="js/jquery.ztree.core.min.js"></script>
+<script src="js/leftsideAndPage.js"></script>
+<script src="js/laydate/laydate.js"></script>
+<script src="js/fileinput.min.js"></script>
+
+
+<script>
+    $(document).ready(function () {
+        $(".list span").click(function () {
+            if ($(this).html() == "修改") {
+                $(this).siblings("p").children("input").attr("disabled",false);
+                $(this).html("保存");
+            } else if ($(this).html() == "保存") {
+                $(this).siblings("p").children("input").attr("disabled",true);
+                $(this).html("修改");
+            }
+
+        })
+
+        $("#file-0b").fileinput();
+
+        $.fn.zTree.init($("#depart"), setting, depart);
+        $.fn.zTree.init($("#identify"), setting2, identify);
+        $.fn.zTree.init($("#depart2"), setting, depart);
+        $.fn.zTree.init($("#identify2"), setting2, identify);
+        var obj = $.fn.zTree.getZTreeObj("treeDemo");
+        //obj.expandAll(true);
+
+        $(".leftul li").on("click", function () {
+            $(this).addClass("active").siblings().removeClass("active");
+            $("#" + $(this).attr("data-source")).show().siblings(".ztree").hide();
+        })
+
+        $(".tcdPageCode").css('display', 'block');
+
+        $(".chs-button").click(function(){
+            $(".pagination").removeAttr("id");
+            $($(this).attr("data-target")).find(".pagination").attr("id", "pagination");
+            initUI(1, 3);
+        });
+    });
+
+    var setting={};
+    var depart = [
+        {name : "华润深圳", open : true, children : [
+            {name : "总经办", open : true},
+            {name : "技术部", open : true, children : [
+                {name : "项目组1"},
+                {name : "项目组2"},
+                {name : "项目组3"},
+                {name : "项目组4"}
+            ]},
+            {name : "财务部"},
+            {name : "售后部", open : true, children : [
+                {name : "售后一部"},
+                {name : "售后二部"},
+                {name : "售后三部"}
+            ]},
+            {name : "后勤部", open : true, children : [
+                {name : "后勤一部"},
+                {name : "后勤二部"},
+                {name : "后勤三部"}
+            ]},
+            {name : "法务部"}
+        ]}
+    ];
+
+    var setting2={};
+    var identify = [
+        {name : "华润深圳", open : true, children : [
+            {name : "总经理"},
+            {name : "总经理助理"},
+            {name : "秘书"},
+            {name : "项目经理"},
+            {name : "产品经理"},
+            {name : "售后经理"},
+            {name : "会计主管"}
+        ]}
+    ]
+
+    /*加载日历*/
+    var start = {
+        elem: '#startime',
+        format: 'YYYY-MM-DD',
+        max: '2099-06-16',
+        istime: false,
+        istoday: true,
+        choose: function(datas) {
+            var oldTime = (new Date(datas + " 00:00:00"));
+            oldTime.setDate(oldTime.getDate());
+            var ddd = oldTime.getFullYear() + "-" + (Number(oldTime.getMonth()) + Number(1)) + "-" + oldTime.getDate();
+            end.min = ddd; //开始日选好后，重置结束日的最小日期
+            end.start = ddd; //将结束日的初始值设定为开始日
+        }
+    };
+    var end = {
+        elem: '#endtime',
+        format: 'YYYY-MM-DD',
+        max: '2099-06-16',
+        istime: false,
+        istoday: true,
+        choose: function(datas) {
+            var oldTime = (new Date(datas + " 00:00:00"));
+            oldTime.setDate(oldTime.getDate());
+            var ddd = oldTime.getFullYear() + "-" + (Number(oldTime.getMonth()) + Number(1)) + "-" + oldTime.getDate();
+            start.max = ddd; //结束日选好后，重置开始日的最大日期
+        }
+    };
+    laydate(start);
+    laydate(end);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>登录</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/login.css" />
+	</head>
+
+	<body>
+		<div class="logo">
+			<div class="l-left">
+				<img src="images/logo.jpg" class="img-responsive" />
+			</div>
+			<div class="l-right">
+				天问管理系统
+			</div>
+		</div>
+		<div class="page">
+			<div class="p-login">
+				<div class="p-login-title">
+					用户登录
+				</div>
+				<form action="choose.html">
+					<div class="p-info">
+						<div class="p-l-user">
+							帐号
+							<input type="text" value="" style="color: #000;"/>
+						</div>
+						<div class="p-l-psd">
+							密码
+							<input type="password" value="" style="color: #000;"/>
+						</div>
+						<div class="p-l-code">
+							验证码
+							<input type="text" value="" style="color: #000;width: 80px;"/>
+							<img src="" />
+						</div>
+					</div>
+					<input type="button" value="登录" class="btn btn-default btn-sm" />
+				</form>
+			</div>
+		</div>
+		<div class="bg"> <img src="images/timg.jpg" /></div>
+	</body>
+	<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/login.js" type="text/javascript" charset="utf-8"></script>
+
+	<script>
+		$(document).ready(function () {
+			$("input[type=button]").click(function () {
+				window.location.href="choose.html";
+            })
+        })
+	</script>
+
+</html>

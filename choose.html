@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="x-ua-compatible" content="IE=edge">
+		<title>首页</title>
+		<!--样式文件引用-->
+		<link href="css/style.css" rel="stylesheet" type="text/css"/>
+		<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+		<link href="css/jquery.searchableSelect.css" rel="stylesheet" type="text/css"/>
+		<!--公共导航部分--->
+
+	<!--
+    	作者：qiancheng
+    	时间：2016-12-30
+    	描述：select
+    -->
+		<style>
+			.dropdiv1{width: 350px; height: 260px; border: 2px solid #d2d2d2; border-radius: 10px; float: left; margin: 15% 0 15% 20%;}
+			.dropdiv2{width: 350px; height: 260px; border: 2px solid #d2d2d2; border-radius: 10px;float: right; margin: 15% 20% 15% 0;}
+			.dop-above{width: 86%; padding: 17% 7%;}
+			.dop-above2{height: 174px;}
+			.droptip{font-size: 20px; text-align: center;}
+		</style>
+
+
+
+	</head>
+
+	<body style="background: #f0f0f0;">
+		<div class="top">
+			<div class="left"><img src="images/logo.png" alt="logo" />天问管理平台<span class="wel">欢迎<span>草根</span>登录天问团检智能管理平台！</span>
+			</div>
+			<div class="right"><img alt="退出登录" src="images/loginOut.png" /><span class="username">退出登录</span></div>
+		</div>
+
+		<div class="dropdiv1">
+			<div class="dop-above">
+				<select name="drop1" class="ui-select">
+					<option value="123">第一季度第二次体检</option>
+					<option value="123">第一季度第二次体检</option>
+					<option value="123">第一季度第二次体检</option>
+					<option value="123">第一季度第二次体检</option>
+					<option value="123">第一季度第二次体检</option>
+				</select>
+				<button class="btn btn-primary btn-sm" style="margin: -58px 0 0 250px;">确定</button>
+			</div>
+			<div class="droptip">选 择 批 次</div>
+		</div>
+		<a href="addBaseBatch.html">
+			<div class="dropdiv2">
+				<div class="dop-above2">
+					<img alt="abc" src="images/bookmark.png" style="width: 100px; margin: 10% 0 0 36%;">
+				</div>
+				<div class="droptip">新 增 批 次</div>
+			</div>
+		</a>
+		<div style=" position: absolute; bottom:0; left:0; width: 100%;">
+
+		</div>
+
+	</body>
+	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/jquery.searchableSelect.js"></script>
+	<script>
+        $(document).ready(function(){
+            $(".ui-select").searchableSelect();
+
+        });
+	</script>
+
+</html>

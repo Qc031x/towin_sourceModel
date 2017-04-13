@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="x-ua-compatible" content="IE=edge">
+		<title>电子版病历上传申请</title>
+		<!--样式文件引用-->
+		<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+		<link href="css/style.css" rel="stylesheet" type="text/css" />
+		<link href="css/applicationWaitUpload.css" rel="stylesheet" type="text/css">
+		<!---my css--->
+		<link href="css/zTreeStyle.css" rel="stylesheet" type="text/css">
+		<link href="css/reservationWaitCheck.css" rel="stylesheet" type="text/css">
+
+		<style>
+			#myModal .modal-body {
+				max-height: 800px;
+			}
+			
+			#myModal .modal-body select {
+				margin-bottom: 0;
+				width: 120px;
+			}
+			
+			#laydate_box * {
+				box-sizing: content-box;
+			}
+			
+			.leftul {
+				width: 100%;
+				height: 25px;
+				float: left;
+				margin: 0 0 10px 0;
+				cursor: pointer;
+			}
+			
+			.leftul .title {
+				width: 50%;
+				height: 25px;
+				float: left;
+				background-color: #f4f4f4;
+				border-radius: 5px 5px 0 0;
+				font-size: 12px;
+				color: #000;
+				text-align: center;
+				line-height: 25px;
+			}
+			
+			.leftul .title:hover {
+				width: 50%;
+				height: 25px;
+				float: left;
+				background-color: #CCCCCC;
+				border-radius: 5px 5px 0 0;
+				font-size: 12px;
+				color: #000;
+				text-align: center;
+			}
+			
+			.leftul .title.active {
+				background-color: #FFFFFF;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="top">
+			<div class="left"><img src="images/logo.png" alt="logo" />天问企业预约平台-企业端<span class="wel">欢迎<span>XXX</span>登录深圳市北大医院病历复印智能管理平台！</span>
+			</div>
+			<div class="right"><img alt="退出登录" src="images/loginOut.png" /><span class="username">退出登录</span></div>
+		</div>
+
+		<div class="page-container">
+			<div class="page-sidebar nav-collapse collapse" style="border-right: none;">
+				<div class="row" style="padding-left: 10px;">
+					<div class="col-md-9">
+						<div class="btn-group">
+							<button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+								第四季度职第一批职工体检
+								<span class="caret"></span>
+							</button>
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="#">第三季度职第一批职工体检</a></li>
+								<li><a href="#">第三季度职第二批职工体检</a></li>
+								<li><a href="#">第四季度职第二批职工体检</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<button class="btn btn-primary btn-sm">确定</button>
+					</div>
+				</div>
+				<ul class="page-sidebar-menu">
+					<li>
+						<a class="sideblk blk" href="index.html">
+							<i class="home"><img src="images/icon-home.png"/></i>
+							<span class="title">首页</span>
+							<span class="selected"></span>
+						</a>
+					</li>
+
+					<li>
+						<a class="sideblk blk" href="javascript:;">
+							<i class="caiwu"><img src="images/caiwu.png"/></i>
+							<span class="title">员工管理</span>
+							<span class="arrowicon"><img src="images/arrowdown.png"/></span>
+						</a>
+						<ul class="sub-menu subactive">
+							<li class="titactive">
+								<a href="employeeList.html">员工列表</a>
+							</li>
+							<li>
+								<a href="roleList.html">角色列表</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a class="sideblk blk" href="javascript:;">
+							<i class="caiwu"><img src="images/caiwu.png"/></i>
+							<span class="title">预约批次管理</span>
+							<span class="arrowicon"><img src="images/arrowdown.png"/></span>
+						</a>
+						<ul class="sub-menu">
+							<li>
+								<a href="batchList.html">批次列表</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+
+			<div class="searchBox">
+				<p class="leftul ">
+					<span class="title active" data-source="depart">按部门</span>
+					<span class="title" data-source="identify">按角色</span>
+				</p>
+				<div class="tankuang_left_bumen">
+					<div style="padding:10px 25px; border-bottom: solid 2px #e1e1e1;">
+						<input type="text" style="width: 110px;" /> <button class="btn btn-xs">查询</button>
+					</div>
+					<div class="ztree" id="depart"></div>
+					<div class="ztree" id="identify" style="display: none;"></div>
+				</div>
+			</div>
+			<div class="contentBox">
+				<div class="content" id="liebiao1" style="display: none;">
+
+					<div class="page-content">
+						<div class="contenttop">
+							<div class="tit">
+								员工列表
+							</div>
+						</div>
+						<div class="search-body">
+							<div class="timeBox">
+								<span>入职时间：</span>
+								<input id="startime" value="2016-12-21" readonly="readonly" type="text">&emsp;——&emsp;<input id="endtime" value="2016-12-21" readonly="readonly" type="text">
+							</div>
+							<div class="search-box">
+								<input type="text" placeholder="姓名 / 手机号 / 身份证 " />
+							</div>
+							<div class="timeBox">
+								<span class="btn btn-info">搜索</span>
+							</div>
+						</div>
+						<div class="portlet-body">
+							<table class="table  table-hover" id="sample_editable_1">
+								<thead>
+									<tr>
+										<th>姓名</th>
+
+										<th>手机号</th>
+
+										<th>身份证</th>
+
+										<th>归属部门</th>
+
+										<th>入职时间</th>
+
+										<th>转正时间</th>
+
+										<th>归属角色</th>
+
+										<th>家属电话</th>
+
+										<th>地址</th>
+
+										<th class="operate">操作</th>
+
+									</tr>
+
+								</thead>
+								<tbody>
+									<tr class="">
+										<td>张三</td>
+										<td>13888888888</td>
+										<td>48585652262256562222</td>
+										<td class="cng">总经办</td>
+										<td>2016-09-09</td>
+										<td>2016-10-09</td>
+										<td>普通员工</td>
+										<td>13266666666</td>
+										<td>深圳车公庙天开大厦</td>
+										<td>
+											<a class="cek" href="javascript:;">查看</a><img class="linedownft" src="images/linedown.png">
+											<a class="update" href="addEmployee.html">修改</a><img class="linedownft" src="images/linedown.png">
+											<a class="del" href="javascript:;">删除</a>
+										</td>
+									</tr>
+									<tr class="">
+										<td>张三</td>
+										<td>13888888888</td>
+										<td>48585652262256562222</td>
+										<td class="cng">总经办</td>
+										<td>2016-09-09</td>
+										<td>2016-10-09</td>
+										<td>普通员工</td>
+										<td>13266666666</td>
+										<td>深圳车公庙天开大厦</td>
+										<td>
+											<a class="cek" href="javascript:;">查看</a><img class="linedownft" src="images/linedown.png">
+											<a class="update" href="javascript:;">修改</a><img class="linedownft" src="images/linedown.png">
+											<a class="del" href="javascript:;">删除</a>
+										</td>
+									</tr>
+									<tr class="">
+										<td>张三</td>
+										<td>13888888888</td>
+										<td>48585652262256562222</td>
+										<td class="cng">总经办</td>
+										<td>2016-09-09</td>
+										<td>2016-10-09</td>
+										<td>普通员工</td>
+										<td>13266666666</td>
+										<td>深圳车公庙天开大厦</td>
+										<td>
+											<a class="cek" href="javascript:;">查看</a><img class="linedownft" src="images/linedown.png">
+											<a class="update" href="javascript:;">修改</a><img class="linedownft" src="images/linedown.png">
+											<a class="del" href="javascript:;">删除</a>
+										</td>
+									</tr>
+									<tr class="">
+										<td>张三</td>
+										<td>13888888888</td>
+										<td>48585652262256562222</td>
+										<td class="cng">总经办</td>
+										<td>2016-09-09</td>
+										<td>2016-10-09</td>
+										<td>普通员工</td>
+										<td>13266666666</td>
+										<td>深圳车公庙天开大厦</td>
+										<td>
+											<a class="cek" href="javascript:;">查看</a><img class="linedownft" src="images/linedown.png">
+											<a class="update" href="javascript:;">修改</a><img class="linedownft" src="images/linedown.png">
+											<a class="del" href="javascript:;">删除</a>
+										</td>
+									</tr>
+									<tr class="">
+										<td>张三</td>
+										<td>13888888888</td>
+										<td>48585652262256562222</td>
+										<td class="cng">总经办</td>
+										<td>2016-09-09</td>
+										<td>2016-10-09</td>
+										<td>普通员工</td>
+										<td>13266666666</td>
+										<td>深圳车公庙天开大厦</td>
+										<td>
+											<a class="cek" href="javascript:;">查看</a><img class="linedownft" src="images/linedown.png">
+											<a class="update" href="javascript:;">修改</a><img class="linedownft" src="images/linedown.png">
+											<a class="del" href="javascript:;">删除</a>
+										</td>
+									</tr>
+									<tr class="">
+										<td>张三</td>
+										<td>13888888888</td>
+										<td>48585652262256562222</td>
+										<td class="cng">总经办</td>
+										<td>2016-09-09</td>
+										<td>2016-10-09</td>
+										<td>普通员工</td>
+										<td>13266666666</td>
+										<td>深圳车公庙天开大厦</td>
+										<td>
+											<a class="cek" href="javascript:;">查看</a><img class="linedownft" src="images/linedown.png">
+											<a class="update" href="javascript:;">修改</a><img class="linedownft" src="images/linedown.png">
+											<a class="del" href="javascript:;">删除</a>
+										</td>
+									</tr>
+									<tr class="">
+										<td>张三</td>
+										<td>13888888888</td>
+										<td>48585652262256562222</td>
+										<td class="cng">总经办</td>
+										<td>2016-09-09</td>
+										<td>2016-10-09</td>
+										<td>普通员工</td>
+										<td>13266666666</td>
+										<td>深圳车公庙天开大厦</td>
+										<td>
+											<a class="cek" href="javascript:;">查看</a><img class="linedownft" src="images/linedown.png">
+											<a class="update" href="javascript:;">修改</a><img class="linedownft" src="images/linedown.png">
+											<a class="del" href="javascript:;">删除</a>
+										</td>
+									</tr>
+									<tr class="">
+										<td>张三</td>
+										<td>13888888888</td>
+										<td>48585652262256562222</td>
+										<td class="cng">总经办</td>
+										<td>2016-09-09</td>
+										<td>2016-10-09</td>
+										<td>普通员工</td>
+										<td>13266666666</td>
+										<td>深圳车公庙天开大厦</td>
+										<td>
+											<a class="cek" href="javascript:;">查看</a><img class="linedownft" src="images/linedown.png">
+											<a class="update" href="javascript:;">修改</a><img class="linedownft" src="images/linedown.png">
+											<a class="del" href="javascript:;">删除</a>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<div class="allPay">
+								<!--<span class="btn1" data-toggle="modal" data-target="#myModal">新增员工</span>-->
+								<span onclick="location.href='addEmployee.html'" class="btn1" >新增员工</span>
+							</div>
+							<div class="tcdPageCode paginList" style="display: block;">
+								<div id="pagination" class="pagination"></div>
+							</div>
+							<div class="pageBlank"></div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+			<div class="ykfooter">
+				<a href="#">帮助中心</a><span class="vertical">|</span>
+				<a href="#">关于我们</a><span class="vertical">|</span>
+				<a href="#">联系方式</a><span class="vertical">|</span><span class="ykcompely">天问信息技术（深圳）有限公司</span><span>&copy;&nbsp;2016&nbsp;浙&nbsp;B2-20080224-16</span>
+			</div>
+			<div class="checkdetail">
+				<div class="hd">员工信息</div>
+				<div class="content" style="height: 854px;">
+					<div class="single">姓&emsp;&emsp;名：<span>张三</span></div>
+					<div class="single">性&emsp;&emsp;别：<span>男</span></div>
+					<div class="single">身份证号：<span>362426189703231716</span></div>
+					<div class="single">工&emsp;&emsp;号：<span>00818</span></div>
+					<div class="single">岗位名称：<span>行政助理</span></div>
+					<div class="single">出生日期：<span>1990-09-09</span></div>
+					<div class="single">籍&emsp;&emsp;贯：<span>广东省</span></div>
+					<div class="single">电&emsp;&emsp;话：<span>13666666666</span></div>
+					<div class="single">家庭住址：<span>深圳车公庙天开大厦</span></div>
+					<div class="single">婚姻状况：<span>未婚</span></div>
+					<div class="single">状&emsp;&emsp;态：<span>启用</span></div>
+					<div class="single">入职时间：<span>2016-09-10</span></div>
+					<div class="single">创建时间：<span>2016-09-10</span><span>20:30:59</span></div>
+					<div class="single">归属角色：<span>中层人员</span></div>
+					<div class="single">归属部门：<span>总经办</span></div>
+					<div class="single">密&emsp;&emsp;码：<span>231716</span></div>
+					<div class="blank"></div>
+				</div>
+				<div class="manup"><span class="undo">返回</span></div>
+			</div>
+		</div>
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+						<h4 class="modal-title" id="myModalLabel">
+                    新增员工
+                </h4>
+					</div>
+					<div class="modal-body">
+						<form>
+							<table class="table table-hover m10">
+								<tbody>
+									<tr>
+										<td width="15%" class="tableleft">姓&emsp;&emsp;名</td>
+										<td>
+											<input type="text" class="form-control" />
+										</td>
+									</tr>
+									<tr>
+										<td class="tableleft">性&emsp;&emsp;别</td>
+										<td>
+											<select class="form-control">
+												<option>男</option>
+												<option>女</option>
+											</select>
+										</td>
+									</tr>
+									<tr>
+										<td class="tableleft">身份证号</td>
+										<td>
+											<input type="text" class="form-control" />
+										</td>
+									</tr>
+									<tr>
+										<td class="tableleft">工&emsp;&emsp;号</td>
+										<td>
+											<input type="text" class="form-control" />
+										</td>
+									</tr>
+									<tr>
+										<td class="tableleft">出生日期</td>
+										<td class="timeBox">
+											<input id="birthday" value="2016-12-22" readonly="readonly" type="text">
+										</td>
+									</tr>
+									<tr>
+										<td class="tableleft">籍&emsp;&emsp;贯</td>
+										<td>
+											<select class="form-control">
+												<option>湖北省</option>
+												<option>湖南省</option>
+												<option>广东省</option>
+											</select>
+										</td>
+									</tr>
+									<tr>
+										<td class="tableleft">电&emsp;&emsp;话</td>
+										<td>
+											<input type="text" class="form-control" />
+										</td>
+									</tr>
+									<tr>
+										<td class="tableleft">家属电话</td>
+										<td>
+											<input type="text" class="form-control" />
+										</td>
+									</tr>
+									<tr>
+										<td class="tableleft">家庭住址</td>
+										<td>
+											<input type="text" class="form-control" />
+										</td>
+									</tr>
+									<tr>
+										<td class="tableleft">婚姻情况</td>
+										<td>
+											<select class="form-control">
+												<option value="0">未婚</option>
+												<option value="1">已婚</option>
+											</select>
+										</td>
+									</tr>
+									<tr>
+										<td class="tableleft">状&emsp;&emsp;态</td>
+										<td>
+											<select class="form-control">
+												<option value="0">暂停</option>
+												<option value="1">启用</option>
+											</select>
+										</td>
+									</tr>
+									<tr>
+										<td class="tableleft">归属角色</td>
+										<td>
+											<select class="form-control">
+												<option value="0">普通员工</option>
+												<option value="1">中层人员</option>
+												<option value="1">管理人员</option>
+											</select>
+										</td>
+									</tr>
+									<tr>
+										<td class="tableleft">入职时间</td>
+										<td class="timeBox">
+											<input id="entrytime" value="2016-12-22" readonly="readonly" type="text">
+										</td>
+									</tr>
+									<tr>
+										<td class="tableleft">转正时间</td>
+										<td class="timeBox">
+											<input id="formaltime" value="2016-12-22" readonly="readonly" type="text">
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary">保存</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+					</div>
+				</div>
+				<!-- /.modal-content -->
+			</div>
+			<!-- /.modal -->
+		</div>
+		<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+		<script src="js/pagination.js"></script>
+		<script type="text/javascript" src="js/jquery.ztree.core.min.js"></script>
+		<script src="js/bootstrap.min.js" type="text/javascript"></script>
+		<script src="js/leftsideAndPage.js" type="text/javascript"></script>
+		<script src="js/laydate/laydate.js"></script>
+
+		<script>
+			var setting = {
+				callback: {
+					onClick: setFrame
+				}
+			};
+			var depart = [{
+				name: "华润深圳",
+				open: true,
+				children: [{
+					name: "总经办",
+					open: true
+				}, {
+					name: "技术部",
+					open: true,
+					children: [{
+						name: "项目组1"
+					}, {
+						name: "项目组2"
+					}, {
+						name: "项目组3"
+					}, {
+						name: "项目组4"
+					}]
+				}, {
+					name: "财务部"
+				}, {
+					name: "售后部",
+					open: true,
+					children: [{
+						name: "售后一部"
+					}, {
+						name: "售后二部"
+					}, {
+						name: "售后三部"
+					}]
+				}, {
+					name: "后勤部",
+					open: true,
+					children: [{
+						name: "后勤一部"
+					}, {
+						name: "后勤二部"
+					}, {
+						name: "后勤三部"
+					}]
+				}, {
+					name: "法务部"
+				}]
+			}];
+
+			var setting2 = {};
+			var identify = [{
+				name: "华润深圳",
+				open: true,
+				children: [{
+					name: "总经理"
+				}, {
+					name: "总经理助理"
+				}, {
+					name: "秘书"
+				}, {
+					name: "项目经理"
+				}, {
+					name: "产品经理"
+				}, {
+					name: "售后经理"
+				}, {
+					name: "会计主管"
+				}]
+			}]
+			$(document).ready(function() {
+
+				$.fn.zTree.init($("#depart"), setting, depart);
+				$.fn.zTree.init($("#identify"), setting2, identify);
+				var obj = $.fn.zTree.getZTreeObj("treeDemo");
+				//obj.expandAll(true);
+
+				$(".leftul span").on("click", function() {
+						$(this).addClass("active").siblings().removeClass("active");
+						$("#" + $(this).attr("data-source")).show().siblings(".ztree").hide();
+					})
+					//右侧边栏预约主体切换
+				$('.cek').click(function() {
+					$(this).parent().parent().addClass('trActive');
+					var format = $(this).parent().siblings(".cng").html();
+					$(".blFormat").html(format);
+					$('.checkdetail').css('display', 'block');
+
+				});
+
+				//右侧边栏底部操作
+				$('.undo').click(function() {
+					$('.checkdetail').css('display', 'none');
+				});
+
+				//数据超过一页显示分页
+				if($('tbody tr').size() > 8) {
+					$(".tcdPageCode").css('display', 'block');
+				} else {
+					$(".tcdPageCode").css('display', 'none');
+				}
+
+				$.fn.zTree.init($("#treeDemo"), setting, zNodes);
+				var obj = $.fn.zTree.getZTreeObj("treeDemo");
+				obj.expandAll(true);
+			});
+
+			function setFrame(event, treeId, treeNode) {
+				if(!treeNode.isParent) {
+					$("#liebiao1").show();
+					if(Number(treeNode.getIndex()) % 2 == 0) {
+						$("#liebiao1 tr:gt(5)").hide();
+					} else {
+						$("#liebiao1 tr").show();
+					}
+				}
+			};
+
+			/*加载日历*/
+			var start = {
+				elem: '#startime',
+				format: 'YYYY-MM-DD',
+				max: '2099-06-16',
+				istime: false,
+				istoday: true,
+				choose: function(datas) {
+					var oldTime = (new Date(datas + " 00:00:00"));
+					oldTime.setDate(oldTime.getDate());
+					var ddd = oldTime.getFullYear() + "-" + (Number(oldTime.getMonth()) + Number(1)) + "-" + oldTime.getDate();
+					end.min = ddd; //开始日选好后，重置结束日的最小日期
+					end.start = ddd; //将结束日的初始值设定为开始日
+				}
+			};
+			var end = {
+				elem: '#endtime',
+				format: 'YYYY-MM-DD',
+				max: '2099-06-16',
+				istime: false,
+				istoday: true,
+				choose: function(datas) {
+					var oldTime = (new Date(datas + " 00:00:00"));
+					oldTime.setDate(oldTime.getDate());
+					var ddd = oldTime.getFullYear() + "-" + (Number(oldTime.getMonth()) + Number(1)) + "-" + oldTime.getDate();
+					start.max = ddd; //结束日选好后，重置开始日的最大日期
+				}
+			};
+			laydate(start);
+			laydate(end);
+
+			var birthday = {
+				elem: '#birthday',
+				format: 'YYYY-MM-DD',
+				max: '2099-06-16',
+				istime: false,
+				istoday: true,
+				choose: function(datas) {
+					var oldTime = (new Date(datas + " 00:00:00"));
+					oldTime.setDate(oldTime.getDate());
+					var ddd = oldTime.getFullYear() + "-" + (Number(oldTime.getMonth()) + Number(1)) + "-" + oldTime.getDate();
+					start.max = ddd; //结束日选好后，重置开始日的最大日期
+				}
+			};
+
+			var entrytime = {
+				elem: '#entrytime',
+				format: 'YYYY-MM-DD',
+				max: '2099-06-16',
+				istime: false,
+				istoday: true,
+				choose: function(datas) {
+					var oldTime = (new Date(datas + " 00:00:00"));
+					oldTime.setDate(oldTime.getDate());
+					var ddd = oldTime.getFullYear() + "-" + (Number(oldTime.getMonth()) + Number(1)) + "-" + oldTime.getDate();
+					start.max = ddd; //结束日选好后，重置开始日的最大日期
+				}
+			};
+
+			laydate(birthday);
+			laydate(entrytime);
+		</script>
+	</body>
+
+</html>

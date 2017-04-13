@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <title>首页</title>
+    <!--样式文件引用-->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet"><!--公共导航部分--->
+    <link href="css/index.css" rel="stylesheet" type="text/css"><!---my css--->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="top">
+    <div class="left"><img src="images/logo.png" alt="logo"/>天问管理平台<span class="wel">欢迎<span>草根</span>登录天问团检智能管理平台！</span></div>
+    <div class="right"><img alt="退出登录" src="images/loginOut.png" /><span class="username">退出登录</span></div>
+</div>
+
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-3">
+			123
+		</div>
+		<div class="col-md-3">
+123
+		</div>
+		<div class="col-md-3">
+123
+		</div>
+		<div class="col-md-3">
+123
+		</div>
+	</div>
+</div>
+
+
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script src="js/leftsideAndPage.js"></script>
+
+</body>
+</html>

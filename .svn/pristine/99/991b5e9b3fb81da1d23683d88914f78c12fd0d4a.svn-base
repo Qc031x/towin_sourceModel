@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <title>电子版病历上传申请</title>
+    <!--样式文件引用-->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css"/>
+    <link href="css/applicationWaitUpload.css" rel="stylesheet" type="text/css">
+    <link href="css/reservationWaitCheck.css" rel="stylesheet" type="text/css">
+    <style type="text/css">
+        .sample-editable-a li, .sample-editable-a-b li {
+            float: left;
+            padding-left: 3.5%;
+            line-height: 35px;
+        }
+        .sample-editable-a, .sample-editable-a-b  {
+            display: block;
+            width: 100%;
+            height: 35px;
+        }
+        .sample-editable-a {
+            border-bottom: 2px solid #ddd;
+            border-radius: 2px;
+            background: #E5E5E5;
+        }
+        .sample-editable-a .sample-editable-hao {
+            padding-left: 3.5%;
+        }
+        .sample-editable-a .sample-editable-name {
+            padding-left: 12%;
+        }
+        .sample-editable-a .sample-editable-starttime {
+            padding-left: 9%;
+        }
+        .sample-editable-a .sample-editable-endtime {
+            padding-left: 5.5%;
+        }
+        .sample-editable-a .sample-editable-sum {
+            padding-left: 4.5%;
+        }
+        .sample-editable-a .sample-editable-ren {
+            padding-left: 4%;
+        }
+        .sample-editable-a .sample-editable-ctime {
+            padding-left: 7%;
+        }
+        .sample-editable-a .sample-editable-statc {
+            padding-left: 8%;
+        }
+    </style>
+</head>
+<body>
+<div class="top">
+    <div class="left"><img src="images/logo.png" alt="logo" />天问企业预约平台-企业端<span class="wel">欢迎<span>XXX</span>登录深圳市北大医院病历复印智能管理平台！</span></div>
+    <div class="right"><img alt="退出登录" src="images/loginOut.png" /><span class="username">退出登录</span></div>
+</div>
+
+<div class="page-container">
+    <div class="page-sidebar nav-collapse collapse">
+        <div class="row" style="padding-left: 10px;">
+            <div class="col-md-8">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+                        第四季度职第一批职工体检
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">第三季度职第一批职工体检</a></li>
+                        <li><a href="#">第三季度职第二批职工体检</a></li>
+                        <li><a href="#">第四季度职第二批职工体检</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <button class="btn btn-primary btn-sm">确定</button>
+            </div>
+        </div>
+        <ul class="page-sidebar-menu">
+            <li>
+                <a class="sideblk blk" href="index.html">
+                    <i class="home"><img src="images/icon-home.png"/></i>
+                    <span class="title">首页</span>
+                    <span class="selected"></span>
+                </a>
+            </li>
+
+            <li>
+                <a class="sideblk" href="javascript:;">
+                    <i class="caiwu"><img src="images/caiwu.png"/></i>
+                    <span class="title">团检批次管理</span>
+                    <span class="arrowicon"><img src="images/arrowdown.png"/></span>
+                </a>
+                <ul class="sub-menu subactive">
+                    <li class="titactive">
+                        <a href="batchList.html">批次列表</a>
+                    </li>
+                    <li>
+                        <a href="addNewBatch.html">新增批次</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a class="sideblk" href="javascript:;">
+                    <i class="caiwu"><img src="images/caiwu.png"/></i>
+                    <span class="title">员工管理</span>
+                    <span class="arrowicon"><img src="images/arrowdown.png"/></span>
+                </a>
+                <ul class="sub-menu subactive">
+                    <li >
+                        <a href="employeeList.html">员工列表</a>
+                    </li>
+                    <li>
+                        <a href="roleList.html">角色列表</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+
+    <div class="contentBox">
+        <div class="content">
+
+                <div class="page-content">
+                    <div class="contenttop">
+                        <div class="tit"><a class="btn btn-primary btn-sm" href="addNewBatch.html">新增</a></div>
+                        <div class="search"><input type="text"/><img src="images/search.png"/></div>
+                    </div>
+
+                    <div class="portlet-body">
+                        <div class="table table-hover" id="sample_editable_1">
+                                <ul class="sample-editable-a">
+                                    <li class="sample-editable-hao">批次号</li>
+
+                                    <li class="sample-editable-name">名称</li>
+
+                                    <li class="sample-editable-starttime">开始时间</li>
+
+                                    <li class="sample-editable-endtime">结束时间</li>
+
+                                    <li class="sample-editable-sum">总预算</li>
+
+                                    <li class="sample-editable-ren">创建人</li>
+
+                                    <li class="sample-editable-ctime">创建时间</li>
+
+                                    <li class="sample-editable-statc">状态</li>
+
+                                    <li class="operate">操作</li>
+                                </ul>
+
+                                <ul class="sample-editable-a-b">
+                                    <li>HR161000015</li>
+                                    <li>华润4季度第一次体检</li>
+                                    <li>2016-10-01</li>
+                                    <li>2016-12-30</li>
+                                    <li>100000</li>
+                                    <li>管理员</li>
+                                    <li><span class="dt">2016-09-30</span><span class="tm">20:30:59</span></li>
+                                    <li class="cng">体检中</li>
+                                    <li><a class="cek" href="javascript:;" data-toggle="modal" data-target="#operatorBatch">审核</a></li>
+                                </ul>
+                                <ul class="sample-editable-a-b">
+                                    <li>HR161000015</li>
+                                    <li>华润4季度第一次体检</li>
+                                    <li>2016-10-01</li>
+                                    <li>2016-12-30</li>
+                                    <li>100000</li>
+                                    <li>管理员</li>
+                                    <li><span class="dt">2016-09-30</span><span class="tm">20:30:59</span></li>
+                                    <li class="cng">待启动</li>
+                                    <li><a class="cek" href="javascript:;" data-toggle="modal" data-target="#operatorBatch">审核</a></li>
+                                </ul><ul class="sample-editable-a-b">
+                                    <li>HR161000015</li>
+                                    <li>华润4季度第一次体检</li>
+                                    <li>2016-10-01</li>
+                                    <li>2016-12-30</li>
+                                    <li>100000</li>
+                                    <li>管理员</li>
+                                    <li><span class="dt">2016-09-30</span><span class="tm">20:30:59</span></li>
+                                    <li class="cng">待启动</li>
+                                    <li><a class="cek" href="javascript:;" data-toggle="modal" data-target="#operatorBatch">审核</a></li>
+                                </ul>
+                                <ul class="sample-editable-a-b">
+                                    <li>HR161000015</li>
+                                    <li>华润4季度第一次体检</li>
+                                    <li>2016-10-01</li>
+                                    <li>2016-12-30</li>
+                                    <li>100000</li>
+                                    <li>管理员</li>
+                                    <li><span class="dt">2016-09-30</span><span class="tm">20:30:59</span></li>
+                                    <li class="cng">体检中</li>
+                                    <li><a class="cek" href="javascript:;" data-toggle="modal" data-target="#operatorBatch">审核</a></li>
+                                </ul>
+                                <ul class="sample-editable-a-b">
+                                     <li>HR161000015</li>
+                                    <li>华润4季度第一次体检</li>
+                                    <li>2016-10-01</li>
+                                    <li>2016-12-30</li>
+                                    <li>100000</li>
+                                    <li>管理员</li>
+                                    <li><span class="dt">2016-09-30</span><span class="tm">20:30:59</span></li>
+                                    <li class="cng">待启动</li>
+                                    <li><a class="cek" href="javascript:;" data-toggle="modal" data-target="#operatorBatch">审核</a></li>
+                                </ul><ul class="sample-editable-a-b">
+                                     <li>HR161000015</li>
+                                    <li>华润4季度第一次体检</li>
+                                    <li>2016-10-01</li>
+                                    <li>2016-12-30</li>
+                                    <li>100000</li>
+                                    <li>管理员</li>
+                                    <li><span class="dt">2016-09-30</span><span class="tm">20:30:59</span></li>
+                                    <li class="cng">待启动</li>
+                                    <li><a class="cek" href="javascript:;" data-toggle="modal" data-target="#operatorBatch">审核</a></li>
+                                </ul>
+                                <ul class="sample-editable-a-b">
+                                     <li>HR161000015</li>
+                                    <li>华润4季度第一次体检</li>
+                                    <li>2016-10-01</li>
+                                    <li>2016-12-30</li>
+                                    <li>100000</li>
+                                    <li>管理员</li>
+                                    <li><span class="dt">2016-09-30</span><span class="tm">20:30:59</span></li>
+                                    <li class="cng">体检中</li>
+                                    <li><a class="cek" href="javascript:;" data-toggle="modal" data-target="#operatorBatch">审核</a></li>
+                                </ul>
+                                <ul class="sample-editable-a-b">
+                                     <li>HR161000015</li>
+                                    <li>华润4季度第一次体检</li>
+                                    <li>2016-10-01</li>
+                                    <li>2016-12-30</li>
+                                    <li>100000</li>
+                                    <li>管理员</li>
+                                    <li><span class="dt">2016-09-30</span><span class="tm">20:30:59</span></li>
+                                    <li class="cng">体检中</li>
+                                    <li><a class="cek" href="javascript:;" data-toggle="modal" data-target="#operatorBatch">审核</a></li>
+                                </ul>
+                                <ul class="sample-editable-a-b">
+                                     <li>HR161000015</li>
+                                    <li>华润4季度第一次体检</li>
+                                    <li>2016-10-01</li>
+                                    <li>2016-12-30</li>
+                                    <li>100000</li>
+                                    <li>管理员</li>
+                                    <li><span class="dt">2016-09-30</span><span class="tm">20:30:59</span></li>
+                                    <li class="cng">待启动</li>
+                                    <li><a class="cek" href="javascript:;" data-toggle="modal" data-target="#operatorBatch">审核</a></li>
+                                </ul>
+                        </div>
+                        <div class="tcdPageCode paginList" style="display: block;">
+                            <div id="pagination" class="pagination"></div>
+                        </div>
+                        <div class="pageBlank"></div>
+                    </div>
+                </div>
+
+        </div>
+    </div>
+
+    <div class="ykfooter"><a href="#">帮助中心</a><span class="vertical">|</span><a href="#">关于我们</a><span class="vertical">|</span><a href="#">联系方式</a><span class="vertical">|</span><span class="ykcompely">天问信息技术（深圳）有限公司</span><span>&copy;&nbsp;2016&nbsp;浙&nbsp;B2-20080224-16</span></div>
+
+
+
+</div>
+
+<div class="modal fade" id="operatorBatch" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">批次操作</h4>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <button class="btn btn-warning">启动</button>
+                        </div>
+                        <div class="col-md-2">
+                            <button class="btn btn-danger">暂停</button>
+                        </div>
+                        <div class="col-md-2">
+                            <button class="btn btn-default" data-dismiss="modal">取消</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script src="js/pagination.js"></script>
+<script src="js/bootstrap.min.js" type="text/javascript"></script>
+<script src="js/leftsideAndPage.js" type="text/javascript"></script>
+
+<script>
+    $(document).ready(function () {
+        //数据超过一页显示分页
+        if ($('tbody tr').size() > 8) {
+            $(".tcdPageCode").css('display', 'block');
+        }
+        else {
+            $(".tcdPageCode").css('display', 'none');
+        }
+
+    });
+
+</script>
+</body>
+
+</html>
